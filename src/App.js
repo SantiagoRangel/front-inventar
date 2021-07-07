@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from './components/Main.js';
+import Coherence from './components/Coherence.js';
+import Wordcloud from './components/Wordcloud.js';
+import LDA from './components/LDA.js';
+import NER from './components/NER.js';
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path='/' component={Main}>
+          </Route>
+          <Route path='/coherence' component={Coherence}>
+          </Route>
+          <Route path='/wordcloud' component={Wordcloud}>
+          </Route>
+          <Route path='/lda' component={LDA}>
+          </Route>
+          <Route path='/NER' component={NER}>
+          </Route>
+        </Switch>
+
+      </div>
+
+    </Router>
+
   );
 }
 
