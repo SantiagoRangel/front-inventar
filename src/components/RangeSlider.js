@@ -137,7 +137,7 @@ export default function RangeSlider() {
         axios.post("/LDA", data)
             .then((response) => {
                 console.log(response.data);
-                setImg([responsa.data, wordcloud3])})
+                setImg([response.data, wordcloud3])})
             .catch(function (error) {
                 console.log(error);
             });
