@@ -139,6 +139,7 @@ export default function RangeSlider() {
                 console.log(response.data);
                 let imagen = response.data;
                 let b64Response = btoa(response.data);
+                console.log(b64Response)
               /*   
                 var img = new Image();
                 var container = document.getElementById('rami');
