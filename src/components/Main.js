@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import mapa from '../Images/mapa.png';
-import axios from "axios";
-class main extends Component {
+import axios from "axios";class main extends Component {
    
     state= {
         data: ''
     }
     toggleButtonState = () => {
         
-        axios.get("http://localhost:5000/hola/")
-        .then((response) => console.log(response.data));
+        fetch('http://localhost:5000/hola/', { mode: 'no-cors'})
+        .then(blob => blob.json())
+        .then(data => {
+          console.table(data);
+          return data;
+        })
+        .catch(e => {
+          console.log(e);
+          return e;
+        });
       };
 
     render() {
