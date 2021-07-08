@@ -140,7 +140,7 @@ export default function RangeSlider() {
                 let b64Response = btoa(response.data);
                 var img = new Image();
                 var container = document.getElementById('lda');
-                img.src = 'data:image/gif;base64,' + encodedResponse;
+                img.src = 'data:image/gif;base64,' + b64Response;
                 img.onload = function() {
                     container.appendChild( img );
                     };
