@@ -137,14 +137,15 @@ export default function RangeSlider() {
         axios.post("/LDA", data)
             .then((response) => {
                 console.log(response.data);
-                let b64Response = btoa(response.data);
+                let imagen = response.data;
+              /*   let b64Response = btoa(response.data);
                 var img = new Image();
                 var container = document.getElementById('rami');
                 img.src = 'data:image/png;base64,' + b64Response;
                 img.onload = function() {
                     container.appendChild( img );
-                    };
-                //setImg([imagen, wordcloud3])
+                    }; */
+                setImg([imagen, wordcloud3])
             })
             .catch(function (error) {
                 console.log(error);
@@ -232,8 +233,8 @@ export default function RangeSlider() {
 
             </div>
             <div className="row">
-                <div id="rami"className="col-6">
-                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img id="lda" className="ldaperiodo" src={img[0]}></img>}
+                <div id="rami" className="col-6">
+                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> :<img src={`data:image/png;base64,${img[0]}`}/>}
 
                 </div>
                 <div className="col-6">
