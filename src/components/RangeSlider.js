@@ -72,7 +72,7 @@ export default function RangeSlider() {
         numtopics: 0,
         periodo: 1234
     });
-    const [img, setImg] = React.useState([lda1, wordcloud1]);
+    const [img, setImg] = React.useState([ldanuevo, wordnuevo]);
     const [checked, setChecked] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
 
@@ -148,10 +148,11 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 setLoading(true)
-                const nuevalda = require('../Images/ldanuevo.png')
-                const nuevoword = require('../Images/wordnuevo.png')
+                /* const nuevalda = require('../Images/ldanuevo.png')
+                const nuevoword = require('../Images/ldanuevo.png')
 
-                setImg([nuevalda,nuevoword])
+                setImg([ldanuevo,wordnuevo]) */
+                window.location.reload(true);
             })
             .catch(function (error) {
                 console.log(error);
