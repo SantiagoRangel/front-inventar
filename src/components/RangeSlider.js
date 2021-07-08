@@ -66,13 +66,14 @@ function valuetext(value) {
 }
 
 export default function RangeSlider() {
+    const forceUpdate = useForceUpdate();
     const classes = useStyles();
     const [value, setValue] = React.useState([1720, 1811]);
     const [state, setState] = React.useState({
         numtopics: 0,
         periodo: 1234
     });
-    const [img, setImg] = React.useState(['../Images/ldanuevo.png', '../Images/wordnuevo.png']);
+    const [img, setImg] = React.useState(['/home/estudiante/front-inventar/src/Images/ldanuevo.png', '/home/estudiante/front-inventar/src/Images/wordnuevo.png']);
     const [checked, setChecked] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
 
@@ -148,8 +149,8 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 setLoading(true)
-              
-                setImg(['../Images/ldanuevo.png', '../Images/wordnuevo.png'])
+                forceUpdate();
+               // setImg(['/home/estudiante/front-inventar/src/Images/ldanuevo.png','/home/estudiante/front-inventar/src/Images/wordnuevo.png'])
             })
             .catch(function (error) {
                 console.log(error);
