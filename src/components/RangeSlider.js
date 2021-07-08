@@ -70,7 +70,8 @@ export default function RangeSlider() {
     const [value, setValue] = React.useState([1720, 1811]);
     const [state, setState] = React.useState({
         numtopics: 0,
-        periodo: 1234
+        periodo: 1234,
+        coh: ""
     });
     const [img, setImg] = React.useState([ldanuevo, wordnuevo]);
     const [checked, setChecked] = React.useState(false);
@@ -144,10 +145,7 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 setLoading(true)
-                /* const nuevalda = require('../Images/ldanuevo.png')
-                const nuevoword = require('../Images/ldanuevo.png')
-
-                setImg([ldanuevo,wordnuevo]) */
+                setState({...state, coh: response.data})
                 window.location.reload();
             })
             .catch(function (error) {
@@ -242,6 +240,8 @@ export default function RangeSlider() {
 
             </div>
             <div className="row">
+            <p>Punta de Coherencia: {state.coh1}</p>
+
                 <div id="rami" className="col-6">
                     {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={img[0]} />}
 

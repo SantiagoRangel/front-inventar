@@ -10,9 +10,9 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect'
 import lda from '../Images/ldag.png';
-//import ldanuevo from '../Images/ldanuevo.png';
+import ldanuevo from '../Images/ldanuevo.png';
 import wordcloud from '../Images/wordcloudg.png';
-//import wordnuevo from '../Images/wordnuevo.png';
+import wordnuevo from '../Images/wordnuevo.png';
 import lda1 from '../Images/lda1.png';
 import lda2 from '../Images/lda2.png';
 import lda3 from '../Images/lda3.png';
@@ -196,11 +196,11 @@ export default function Comparar() {
         console.log(state)
         axios.post("/LDA", data)
             .then((response) => {
-                setState({ ...state, coh1: response })
+                setState({ ...state, coh1: response.data })
                 let data = { numtopics: state.numtopics, periodo: state.periodo2 }
                 axios.post("/LDA2", data)
                     .then((response) => {
-                        setState({ ...state, coh2: response })
+                        setState({ ...state, coh2: response.data })
                         setLoading(true)
 
                         window.location.reload();
@@ -319,6 +319,7 @@ export default function Comparar() {
 
                     </div>
                     <div className="row">
+                        <p>Puntaje de Coherencia: {state.coh1}</p>
                         <div id="rami" className="col-6">
                             {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={img[0]} />}
 
@@ -329,6 +330,7 @@ export default function Comparar() {
                         </div>
                     </div>
                     <div className="row">
+                    <p>Puntaje de Coherencia: {state.coh1}</p>
                         <div id="rami" className="col-6">
                             {checked ? <img className="wordcloudperiodo" src={img2[1]}></img> : <img className="lda" src={img2[0]} />}
 
