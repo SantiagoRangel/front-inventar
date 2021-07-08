@@ -260,7 +260,7 @@ export default function RangeSlider() {
 
 
             </div>
-            <p>Puntaje de Coherencia: <h3>{state.coh}</h3> </p>
+            <h5>Puntaje de Coherencia: <h3>{state.coh}</h3> </h5>
             <div className="row">
            
             
