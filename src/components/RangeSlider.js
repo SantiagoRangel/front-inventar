@@ -9,9 +9,9 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect'
 import lda from '../Images/ldag.png';
-import ldanuevo from '/home/estudiante/front-inventar/src/Images/ldanuevo.png';
+import ldanuevo from '../Images/ldanuevo.png';
 import wordcloud from '../Images/wordcloudg.png';
-import wordnuevo from '/home/estudiante/front-inventar/src/Images/wordnuevo.png';
+import wordnuevo from '../Images/wordnuevo.png';
 import lda1 from '../Images/lda1.png';
 import lda2 from '../Images/lda2.png';
 import lda3 from '../Images/lda3.png';
@@ -143,11 +143,8 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 setLoading(true)
-                let imagen = response.data;
-                let b64Response = btoa(response.data);
-                console.log(b64Response)
               
-                setImg([ldanuevo, wordnuevo])
+                setImg(['../Images/ldanuevo.png', '../Images/wordnuevo.png'])
             })
             .catch(function (error) {
                 console.log(error);
@@ -242,7 +239,7 @@ export default function RangeSlider() {
             </div>
             <div className="row">
                 <div id="rami" className="col-6">
-                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={img[0]} />}
+                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={require(img[0])} />}
 
                 </div>
                 <div className="col-6">
