@@ -148,8 +148,10 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 setLoading(true)
-              
-                setImg([ldanuevo,wordnuevo])
+                const nuevalda = require('../Images/ldanuevo.png')
+                const nuevoword = require('../Images/wordnuevo.png')
+
+                setImg([nuevalda,nuevoword])
             })
             .catch(function (error) {
                 console.log(error);
