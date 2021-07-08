@@ -138,9 +138,14 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 let b64Response = btoa(response.data);
-                let imagen = 'data:image/png;base64,' + b64Response;
-
-                setImg([imagen, wordcloud3])})
+                var img = new Image();
+                var container = document.getElementById('lda');
+                img.src = 'data:image/gif;base64,' + encodedResponse;
+                img.onload = function() {
+                    container.appendChild( img );
+                    };
+                //setImg([imagen, wordcloud3])
+            })
             .catch(function (error) {
                 console.log(error);
             });
@@ -228,7 +233,7 @@ export default function RangeSlider() {
             </div>
             <div className="row">
                 <div className="col-6">
-                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="ldaperiodo" src={img[0]}></img>}
+                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img id="lda" className="ldaperiodo" src={img[0]}></img>}
 
                 </div>
                 <div className="col-6">
