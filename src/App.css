@@ -45,7 +45,13 @@
   height: 400px;
   
 }
-rect {
- 
+.input {
+margin-top: 15px !important;
 
+}
+.res{
+  margin-top: 25px !important;
+}
+.cambiar{
+  margin: 15px 0 0 0 !important;
 }
