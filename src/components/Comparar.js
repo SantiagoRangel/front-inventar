@@ -220,7 +220,7 @@ export default function Comparar() {
                     .then((response) => {
                         setState({ ...state, coh2: response.data })
                         setLoading(true)
-                        window.location.href = '/coherence?coh1='+ state.coh1+'&coh2='+state.coh2;
+                        window.location.href = '/comparar?coh1='+ state.coh1+'&coh2='+state.coh2;
 
                       /*   navigation.navigate('Coherence', {
                             coh: response.data
