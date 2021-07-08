@@ -35,9 +35,9 @@ class Header extends Component {
                                 </li>
                             </Link>
                             
-                            <Link to="/NER">
+                            <Link to="/comparar">
                                 <li class="nav-item">
-                                    <a class="nav-link" >NER</a>
+                                    <a class="nav-link" >Comparación</a>
                                 </li>
                             </Link>
                         </ul>

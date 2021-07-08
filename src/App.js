@@ -3,10 +3,10 @@ import Main from './components/Main.js';
 import Coherence from './components/Coherence.js';
 import Wordcloud from './components/Wordcloud.js';
 import LDA from './components/LDA.js';
-import NER from './components/NER.js';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Comparar from './components/Comparar';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           </Route>
           <Route path='/lda' component={LDA}>
           </Route>
-          <Route path='/NER' component={NER}>
+          <Route path='/comparar' component={Comparar}>
           </Route>
         </Switch>
 
