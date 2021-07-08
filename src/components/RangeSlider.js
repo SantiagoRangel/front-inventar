@@ -139,7 +139,7 @@ export default function RangeSlider() {
                 console.log(response.data);
                 let b64Response = btoa(response.data);
                 var img = new Image();
-                var container = document.getElementById('lda');
+                var container = document.getElementById('rami');
                 img.src = 'data:image/gif;base64,' + b64Response;
                 img.onload = function() {
                     container.appendChild( img );
@@ -232,7 +232,7 @@ export default function RangeSlider() {
 
             </div>
             <div className="row">
-                <div className="col-6">
+                <div id="rami" className="col-6">
                     {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img id="lda" className="ldaperiodo" src={img[0]}></img>}
 
                 </div>
