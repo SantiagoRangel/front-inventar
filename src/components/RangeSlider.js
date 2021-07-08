@@ -28,7 +28,6 @@ import wordcloud123 from '../Images/wordcloud123.png';
 import wordcloud23 from '../Images/wordcloud23.png';
 import wordcloud234 from '../Images/wordcloud234.png';
 import wordcloud34 from '../Images/wordcloud34.png';
-import { getValueFormatter } from '@nivo/core';
 const axios = require('axios');
 
 const useStyles = makeStyles({
