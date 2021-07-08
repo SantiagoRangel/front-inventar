@@ -152,7 +152,7 @@ export default function RangeSlider() {
                 const nuevoword = require('../Images/ldanuevo.png')
 
                 setImg([ldanuevo,wordnuevo]) */
-                window.location.reload(true);
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);
