@@ -8,7 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect'
-import lda from '../../../new/lda.png';
+import lda from '../Images/ldanuevo.png';
 import wordcloud from '../Images/wordcloudg.png';
 import lda1 from '../Images/lda1.png';
 import lda2 from '../Images/lda2.png';
