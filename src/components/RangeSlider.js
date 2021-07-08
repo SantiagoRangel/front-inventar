@@ -72,7 +72,7 @@ export default function RangeSlider() {
         numtopics: 0,
         periodo: 1234
     });
-    const [img, setImg] = React.useState(['./Images/ldanuevo.png', './Images/wordnuevo.png']);
+    const [img, setImg] = React.useState([lda1, wordcloud1]);
     const [checked, setChecked] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
 
@@ -149,7 +149,7 @@ export default function RangeSlider() {
                 console.log(response.data);
                 setLoading(true)
               
-                setImg(['/home/estudiante/front-inventar/src/Images/ldanuevo.png','/home/estudiante/front-inventar/src/Images/wordnuevo.png'])
+                setImg([ldanuevo,wordnuevo])
             })
             .catch(function (error) {
                 console.log(error);
