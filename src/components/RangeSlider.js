@@ -72,13 +72,13 @@ export default function RangeSlider() {
         numtopics: 0,
         periodo: 1234
     });
-    const [img, setImg] = React.useState([lda, wordcloud]);
+    const [img, setImg] = React.useState(['../Images/ldanuevo.png', '../Images/wordnuevo.png']);
     const [checked, setChecked] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
 
     const handleChange = (event, newValue) => {
 
-        if (newValue[0] === 1720 && newValue[1] === 1811) {
+      /*   if (newValue[0] === 1720 && newValue[1] === 1811) {
             setState({ ...state, periodo: 1234 })
             setImg([lda, wordcloud])
         } else if (newValue[0] === 1720 && newValue[1] === 1770) {
@@ -119,7 +119,12 @@ export default function RangeSlider() {
 
             setImg([lda4, wordcloud4])
         }
+ */
+        if (newValue[0] === 1720 && newValue[1] === 1770) {
+            setState({ ...state, periodo: 1 })
 
+            //setImg([lda1, wordcloud1])
+        }
         setValue(newValue);
     };
     const handleChange2 = (event) => {
@@ -239,7 +244,7 @@ export default function RangeSlider() {
             </div>
             <div className="row">
                 <div id="rami" className="col-6">
-                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={require(img[0])} />}
+                    {checked ? <img className="wordcloudperiodo" src={require(img[1])}></img> : <img className="lda" src={require(img[0])} />}
 
                 </div>
                 <div className="col-6">
