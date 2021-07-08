@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect'
 import lda from '../Images/ldag.png';
@@ -71,7 +71,7 @@ export default function Comparar() {
     const classes = useStyles();
     const [value, setValue] = React.useState([1720, 1811]);
     const [value2, setValue2] = React.useState([1720, 1811]);
-    const navigate = useNavigate();
+    const history = useHistory();
     const [state, setState] = React.useState({
         numtopics: 0,
         periodo1: 1234,
@@ -203,11 +203,11 @@ export default function Comparar() {
                     .then((response) => {
                         setState({ ...state, coh2: response.data })
                         setLoading(true)
-                        
-                        navigation.navigate('Coherence', {
+                      
+                      /*   navigation.navigate('Coherence', {
                             coh: response.data
                             
-                          });
+                          }); */
                         //window.location.reload();
                     })
                     .catch(function (error) {

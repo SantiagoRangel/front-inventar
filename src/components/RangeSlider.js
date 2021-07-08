@@ -11,6 +11,7 @@ import NativeSelect from '@material-ui/core/NativeSelect'
 import lda from '../Images/ldag.png';
 import ldanuevo from '../Images/ldanuevo.png';
 import wordcloud from '../Images/wordcloudg.png';
+import { useHistory } from 'react-router-dom';
 import wordnuevo from '../Images/wordnuevo.png';
 import lda1 from '../Images/lda1.png';
 import lda2 from '../Images/lda2.png';
@@ -67,6 +68,7 @@ function valuetext(value) {
 
 export default function RangeSlider() {
     const classes = useStyles();
+    const history = useHistory();
     const [value, setValue] = React.useState([1720, 1811]);
     const [state, setState] = React.useState({
         numtopics: 0,
@@ -146,7 +148,8 @@ export default function RangeSlider() {
                 console.log(response.data);
                 setLoading(true)
                 setState({...state, coh: response.data})
-                window.location.reload();
+                history.push('/coherence?'+ response.data)
+              //  window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);
