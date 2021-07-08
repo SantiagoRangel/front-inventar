@@ -8,7 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect'
-import lda from '../Images/ldag.png';
+import lda from '../../../new/lda.png';
 import wordcloud from '../Images/wordcloudg.png';
 import lda1 from '../Images/lda1.png';
 import lda2 from '../Images/lda2.png';
@@ -28,6 +28,7 @@ import wordcloud123 from '../Images/wordcloud123.png';
 import wordcloud23 from '../Images/wordcloud23.png';
 import wordcloud234 from '../Images/wordcloud234.png';
 import wordcloud34 from '../Images/wordcloud34.png';
+import new from
 const axios = require('axios');
 
 const useStyles = makeStyles({
@@ -147,7 +148,7 @@ export default function RangeSlider() {
                 img.onload = function() {
                     container.appendChild( img );
                     }; */
-                setImg([b64Response, wordcloud3])
+                setImg(['../../../new/lda.png', wordcloud3])
             })
             .catch(function (error) {
                 console.log(error);
@@ -236,7 +237,7 @@ export default function RangeSlider() {
             </div>
             <div className="row">
                 <div id="rami" className="col-6">
-                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> :<img src={`data:image/png;base64,${img[0]}`}/>}
+                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> :<img src={img[0]}/>}
 
                 </div>
                 <div className="col-6">
