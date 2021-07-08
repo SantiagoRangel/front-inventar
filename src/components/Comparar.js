@@ -70,7 +70,7 @@ export default function Comparar() {
     const classes = useStyles();
     const [value, setValue] = React.useState([1720, 1811]);
     const [value2, setValue2] = React.useState([1720, 1811]);
-
+    const navigate = useNavigate();
     const [state, setState] = React.useState({
         numtopics: 0,
         periodo1: 1234,
@@ -202,7 +202,7 @@ export default function Comparar() {
                     .then((response) => {
                         setState({ ...state, coh2: response.data })
                         setLoading(true)
-                        const navigate = useNavigate();
+                        
                         navigation.navigate('Coherence', {
                             coh: response.data
                             
