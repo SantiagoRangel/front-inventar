@@ -135,7 +135,7 @@ export default function RangeSlider() {
         let data = { numtopics: state.numtopics, periodo: state.periodo }
         console.log(data)
         axios.post("/LDA", data)
-            .then(res => { return res.blob() })
+            .then(res => { return new Blob([res.body]) })
             .then(blob => {
                 var img = URL.createObjectURL(blob);
                 // Do whatever with the img
