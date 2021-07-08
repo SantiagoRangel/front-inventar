@@ -11,7 +11,7 @@ import NativeSelect from '@material-ui/core/NativeSelect'
 import lda from '../Images/ldag.png';
 import ldanuevo from '/home/estudiante/front-inventar/src/Images/ldanuevo.png';
 import wordcloud from '../Images/wordcloudg.png';
-import wordnuevo from'/home/estudiante/front-inventar/src/Images/wordnuevo.png';
+import wordnuevo from '/home/estudiante/front-inventar/src/Images/wordnuevo.png';
 import lda1 from '../Images/lda1.png';
 import lda2 from '../Images/lda2.png';
 import lda3 from '../Images/lda3.png';
@@ -31,7 +31,7 @@ import wordcloud23 from '../Images/wordcloud23.png';
 import wordcloud234 from '../Images/wordcloud234.png';
 import wordcloud34 from '../Images/wordcloud34.png';
 const axios = require('axios');
-
+var Loader = require('react-loader');
 const useStyles = makeStyles({
     root: {
         width: 500,
@@ -74,6 +74,8 @@ export default function RangeSlider() {
     });
     const [img, setImg] = React.useState([lda, wordcloud]);
     const [checked, setChecked] = React.useState(false);
+    const [loading, setLoading] = React.useState(true);
+
     const handleChange = (event, newValue) => {
 
         if (newValue[0] === 1720 && newValue[1] === 1811) {
@@ -134,22 +136,18 @@ export default function RangeSlider() {
         // console.log(value)
     });
     const postLDA = () => {
+        setLoading(false);
         let data = { numtopics: state.numtopics, periodo: state.periodo }
         console.log(data)
         axios.post("/LDA", data)
             .then((response) => {
                 console.log(response.data);
+                setLoading(true)
                 let imagen = response.data;
                 let b64Response = btoa(response.data);
                 console.log(b64Response)
-              /*   
-                var img = new Image();
-                var container = document.getElementById('rami');
-                img.src = 'data:image/png;base64,' + b64Response;
-                img.onload = function() {
-                    container.appendChild( img );
-                    }; */
-                setImg([ ldanuevo, wordnuevo])
+              
+                setImg([ldanuevo, wordnuevo])
             })
             .catch(function (error) {
                 console.log(error);
@@ -218,9 +216,15 @@ export default function RangeSlider() {
                                     value="1"
                                     onClick={postLDA}
                                     variant="contained"
-                                    color="secondary">
+                                    color="secondary"
+                                    disabled={!loading}>
                                     Obtener Resultados
                                 </Button>
+                                <Loader className="loader" loaded={loading} lines={13} length={20} width={10} radius={30}
+                                    corners={1} rotate={0} direction={1} color="#000" speed={1}
+                                    trail={60} shadow={false} hwaccel={false} className="spinner"
+                                    zIndex={2e9} top="50%" left="50%" scale={1.00}
+                                    loadedClassName="loadedContent" />
                             </div>
                         </div>
                         <Button className="cambiar" checked={checked}
@@ -238,7 +242,7 @@ export default function RangeSlider() {
             </div>
             <div className="row">
                 <div id="rami" className="col-6">
-                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> :<img className="lda" src={img[0]}/>}
+                    {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={img[0]} />}
 
                 </div>
                 <div className="col-6">

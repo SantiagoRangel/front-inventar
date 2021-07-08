@@ -37,9 +37,9 @@ Teniendo en cuenta los diferentes tipos de fuentes de información que se tienen
                             </p>
                         </div>
                     </div>
-                    <button onClick={this.toggleButtonState}>
+                   {/*  <button onClick={this.toggleButtonState}>
                         LLAMAR
-                    </button>
+                    </button> */}
                 </div>
             </div>
         );
