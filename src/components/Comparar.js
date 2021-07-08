@@ -210,17 +210,19 @@ export default function Comparar() {
     }, [] );
     const postLDA = () => {
         setLoading(false);
+        let coherencia;
         let data = { numtopics: state.numtopics, periodo: state.periodo1 }
         console.log(state)
         axios.post("/LDA", data)
             .then((response) => {
+                coherencia = response.data;
                 setState({ ...state, coh1: response.data })
                 let data = { numtopics: state.numtopics, periodo: state.periodo2 }
                 axios.post("/LDA2", data)
                     .then((response) => {
                         setState({ ...state, coh2: response.data })
                         setLoading(true)
-                        window.location.href = '/comparar?coh1='+ state.coh1+'&coh2='+state.coh2;
+                        window.location.href = '/comparar?coh1='+ coherencia+'&coh2='+response.data;
 
                       /*   navigation.navigate('Coherence', {
                             coh: response.data
