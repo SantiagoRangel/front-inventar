@@ -78,53 +78,49 @@ export default function RangeSlider() {
 
     const handleChange = (event, newValue) => {
 
-      /*   if (newValue[0] === 1720 && newValue[1] === 1811) {
+        if (newValue[0] === 1720 && newValue[1] === 1811) {
             setState({ ...state, periodo: 1234 })
-            setImg([lda, wordcloud])
+         //   setImg([lda, wordcloud])
         } else if (newValue[0] === 1720 && newValue[1] === 1770) {
             setState({ ...state, periodo: 1 })
 
-            setImg([lda1, wordcloud1])
+         //   setImg([lda1, wordcloud1])
         } else if (newValue[0] === 1720 && newValue[1] === 1781) {
             setState({ ...state, periodo: 12 })
 
-            setImg([lda12, wordcloud12])
+           // setImg([lda12, wordcloud12])
         } else if (newValue[0] === 1720 && newValue[1] === 1800) {
             setState({ ...state, periodo: 123 })
 
-            setImg([lda123, wordcloud123])
+          //  setImg([lda123, wordcloud123])
         } else if (newValue[0] === 1770 && newValue[1] === 1781) {
             setState({ periodo: 2 })
 
-            setImg([lda2, wordcloud2])
+          //  setImg([lda2, wordcloud2])
         } else if (newValue[0] === 1770 && newValue[1] === 1800) {
             setState({ ...state, periodo: 23 })
 
-            setImg([lda23, wordcloud23])
+           // setImg([lda23, wordcloud23])
         } else if (newValue[0] === 1770 && newValue[1] === 1811) {
             setState({ ...state, periodo: 234 })
 
-            setImg([lda234, wordcloud234])
+            //setImg([lda234, wordcloud234])
         }
         else if (newValue[0] === 1781 && newValue[1] === 1800) {
             setState({ ...state, periodo: 3 })
 
-            setImg([lda3, wordcloud3])
+           // setImg([lda3, wordcloud3])
         } else if (newValue[0] === 1781 && newValue[1] === 1811) {
             setState({ ...state, periodo: 34 })
 
-            setImg([lda34, wordcloud34])
+           // setImg([lda34, wordcloud34])
         } else if (newValue[0] === 1800 && newValue[1] === 1811) {
             setState({ ...state, periodo: 4 })
 
-            setImg([lda4, wordcloud4])
+           // setImg([lda4, wordcloud4])
         }
- */
-        if (newValue[0] === 1720 && newValue[1] === 1770) {
-            setState({ ...state, periodo: 1 })
 
-            //setImg([lda1, wordcloud1])
-        }
+
         setValue(newValue);
     };
     const handleChange2 = (event) => {
