@@ -9,7 +9,7 @@ class main extends Component {
     }
     toggleButtonState = () => {
         
-        axios.get("http://172.24.98.118:5000/hola/")
+        axios.get("http://localhost:5000/hola/")
         .then((response) => console.log(response.data));
       };
 
