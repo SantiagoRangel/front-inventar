@@ -75,69 +75,73 @@ export default function RangeSlider() {
     const handleChange = (event, newValue) => {
 
         if (newValue[0] === 1720 && newValue[1] === 1811) {
-            setState({...state,periodo: 1234})
+            setState({ ...state, periodo: 1234 })
             setImg([lda, wordcloud])
         } else if (newValue[0] === 1720 && newValue[1] === 1770) {
-            setState({...state,periodo: 1})
+            setState({ ...state, periodo: 1 })
 
             setImg([lda1, wordcloud1])
         } else if (newValue[0] === 1720 && newValue[1] === 1781) {
-            setState({...state,periodo: 12})
+            setState({ ...state, periodo: 12 })
 
             setImg([lda12, wordcloud12])
         } else if (newValue[0] === 1720 && newValue[1] === 1800) {
-            setState({...state,periodo: 123})
+            setState({ ...state, periodo: 123 })
 
             setImg([lda123, wordcloud123])
         } else if (newValue[0] === 1770 && newValue[1] === 1781) {
-            setState({periodo: 2})
+            setState({ periodo: 2 })
 
             setImg([lda2, wordcloud2])
         } else if (newValue[0] === 1770 && newValue[1] === 1800) {
-            setState({...state,periodo: 23})
+            setState({ ...state, periodo: 23 })
 
             setImg([lda23, wordcloud23])
         } else if (newValue[0] === 1770 && newValue[1] === 1811) {
-            setState({...state,periodo: 234})
+            setState({ ...state, periodo: 234 })
 
             setImg([lda234, wordcloud234])
         }
         else if (newValue[0] === 1781 && newValue[1] === 1800) {
-            setState({...state,periodo: 3})
+            setState({ ...state, periodo: 3 })
 
             setImg([lda3, wordcloud3])
         } else if (newValue[0] === 1781 && newValue[1] === 1811) {
-            setState({...state,periodo: 34})
+            setState({ ...state, periodo: 34 })
 
             setImg([lda34, wordcloud34])
         } else if (newValue[0] === 1800 && newValue[1] === 1811) {
-            setState({...state,periodo: 4})
+            setState({ ...state, periodo: 4 })
 
             setImg([lda4, wordcloud4])
         }
 
         setValue(newValue);
     };
-    const handleChange2 = ( event) => {
-        setState({...state,
-            numtopics: event.currentTarget.value})
+    const handleChange2 = (event) => {
+        setState({
+            ...state,
+            numtopics: event.currentTarget.value
+        })
     }
     const handleToggle = () => {
         setChecked(!checked)
         console.log(checked)
     }
     useEffect(() => {
-       // console.log(value)
+        // console.log(value)
     });
     const postLDA = () => {
-        let data = {numtopics: state.numtopics, periodo: state.periodo}
+        let data = { numtopics: state.numtopics, periodo: state.periodo }
         console.log(data)
         axios.post("/LDA", data)
-        .then((response) => console.log(response.data))
-        .catch(function (error) {
-            console.log(error);
-          });
-      };
+            .then((response) => {
+                console.log(response.data);
+                setImg([responsa.data, wordcloud3])})
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
     return (
         <div>
             <div >
