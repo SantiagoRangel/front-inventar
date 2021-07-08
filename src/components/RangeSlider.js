@@ -72,7 +72,7 @@ export default function RangeSlider() {
         numtopics: 0,
         periodo: 1234
     });
-    const [img, setImg] = React.useState(['/home/estudiante/front-inventar/src/Images/ldanuevo.png', '/home/estudiante/front-inventar/src/Images/wordnuevo.png']);
+    const [img, setImg] = React.useState(['./Images/ldanuevo.png', './Images/wordnuevo.png']);
     const [checked, setChecked] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
 
