@@ -261,7 +261,7 @@ export default function RangeSlider() {
 
             </div>
             <div className="row">
-            <p>Punta de Coherencia: {state.coh1}</p>
+            <p>Punta de Coherencia: {state.coh}</p>
 
                 <div id="rami" className="col-6">
                     {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={img[0]} />}
