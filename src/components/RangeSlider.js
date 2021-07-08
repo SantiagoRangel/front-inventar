@@ -152,6 +152,9 @@ export default function RangeSlider() {
     useEffect(() => {
         const paramsQuery = parseQuery(location.search);
         console.log(paramsQuery)
+        if(paramsQuery.coh){
+            setState({...state, coh:paramsQuery.coh})
+        }
     }, [] );
     const postLDA = () => {
         setLoading(false);
@@ -162,7 +165,7 @@ export default function RangeSlider() {
                 console.log(response.data);
                 setLoading(true)
                 setState({...state, coh: response.data})
-                history.push('/coherence?'+ response.data)
+                history.push('/coherence?coh='+ response.data)
               //  window.location.reload();
             })
             .catch(function (error) {
