@@ -358,7 +358,6 @@ export default function Comparar() {
                     <h5>Puntaje de Coherencia: <h3>{state.coh2}</h3> </h5>
 
                     <div className="row">
-                    <p>Puntaje de Coherencia: {state.coh2}</p>
                         <div id="rami" className="col-6">
                             {checked ? <img className="wordcloudperiodo" src={img2[1]}></img> : <img className="lda" src={img2[0]} />}
 
