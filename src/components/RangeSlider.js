@@ -244,7 +244,7 @@ export default function RangeSlider() {
             </div>
             <div className="row">
                 <div id="rami" className="col-6">
-                    {checked ? <img className="wordcloudperiodo" src={require(img[1])}></img> : <img className="lda" src={require(img[0])} />}
+                    {checked ? <img className="wordcloudperiodo" src={require(""+img[1])}></img> : <img className="lda" src={require(""+img[0])} />}
 
                 </div>
                 <div className="col-6">
