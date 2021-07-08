@@ -138,14 +138,15 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 let imagen = response.data;
-              /*   let b64Response = btoa(response.data);
+                let b64Response = btoa(response.data);
+              /*   
                 var img = new Image();
                 var container = document.getElementById('rami');
                 img.src = 'data:image/png;base64,' + b64Response;
                 img.onload = function() {
                     container.appendChild( img );
                     }; */
-                setImg([imagen, wordcloud3])
+                setImg([b64Response, wordcloud3])
             })
             .catch(function (error) {
                 console.log(error);
