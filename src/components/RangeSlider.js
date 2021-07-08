@@ -8,7 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect'
-import lda from '../Images/ldanuevo.png';
+import lda from '../Images/ldag.png';
 import wordcloud from '../Images/wordcloudg.png';
 import lda1 from '../Images/lda1.png';
 import lda2 from '../Images/lda2.png';
@@ -147,7 +147,7 @@ export default function RangeSlider() {
                 img.onload = function() {
                     container.appendChild( img );
                     }; */
-                setImg(['../../../new/lda.png', wordcloud3])
+                setImg([ '../Images/ldanuevo.png', wordcloud3])
             })
             .catch(function (error) {
                 console.log(error);
