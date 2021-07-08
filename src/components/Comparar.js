@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect'
 import lda from '../Images/ldag.png';
@@ -71,7 +71,8 @@ export default function Comparar() {
     const classes = useStyles();
     const [value, setValue] = React.useState([1720, 1811]);
     const [value2, setValue2] = React.useState([1720, 1811]);
-    const history = useHistory();
+    const location = useLocation();
+
     const [state, setState] = React.useState({
         numtopics: 0,
         periodo1: 1234,
@@ -203,7 +204,7 @@ export default function Comparar() {
     useEffect(() => {
         const paramsQuery = parseQuery(location.search);
         console.log(paramsQuery)
-        if(paramsQuery.coh1){
+        if(paramsQuery.coh1 && paramsQuery.coh2){
             setState({...state, coh1:paramsQuery.coh1, coh2: paramsQuery.coh2})
         }
     }, [] );
