@@ -188,9 +188,25 @@ export default function Comparar() {
         setChecked(!checked)
         console.log(checked)
     }
+    const parseQuery = (queryString) => {
+        var query = {};
+        var pairs = (queryString[0] === "?"
+        ? queryString.substr(1)
+        : queryString
+        ).split("&");
+        for (var i = 0; i < pairs.length; i++) {
+            var pair = pairs[i].split("=");
+            query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || "");
+        }
+        return query;
+    };
     useEffect(() => {
-        // console.log(value)
-    });
+        const paramsQuery = parseQuery(location.search);
+        console.log(paramsQuery)
+        if(paramsQuery.coh1){
+            setState({...state, coh1:paramsQuery.coh1, coh2: paramsQuery.coh2})
+        }
+    }, [] );
     const postLDA = () => {
         setLoading(false);
         let data = { numtopics: state.numtopics, periodo: state.periodo1 }
@@ -203,7 +219,8 @@ export default function Comparar() {
                     .then((response) => {
                         setState({ ...state, coh2: response.data })
                         setLoading(true)
-                      
+                        window.location.href = '/coherence?coh1='+ state.coh1+'&coh2='+state.coh2;
+
                       /*   navigation.navigate('Coherence', {
                             coh: response.data
                             
@@ -335,7 +352,7 @@ export default function Comparar() {
                         </div>
                     </div>
                     <div className="row">
-                    <p>Puntaje de Coherencia: {state.coh1}</p>
+                    <p>Puntaje de Coherencia: {state.coh2}</p>
                         <div id="rami" className="col-6">
                             {checked ? <img className="wordcloudperiodo" src={img2[1]}></img> : <img className="lda" src={img2[0]} />}
 
