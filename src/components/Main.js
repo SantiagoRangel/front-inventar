@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import mapa from '../Images/mapa.png';
-
+const axios = require('axios');
 class main extends Component {
    
     state= {
         data: ''
     }
+    toggleButtonState = () => {
+        
+        axios.get("/hola")
+        .then((response) => console.log(response.data));
+      };
 
     render() {
         return (
