@@ -8,7 +8,7 @@ import axios from "axios";class main extends Component {
     }
     toggleButtonState = () => {
         
-        fetch('http://localhost:5000/hola/', { mode: 'no-cors'})
+        fetch('hola/', { mode: 'no-cors'})
         .then(blob => blob.json())
         .then(data => {
           console.table(data);
