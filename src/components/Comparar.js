@@ -202,8 +202,12 @@ export default function Comparar() {
                     .then((response) => {
                         setState({ ...state, coh2: response.data })
                         setLoading(true)
-
-                        window.location.reload();
+                        const navigate = useNavigate();
+                        navigation.navigate('Coherence', {
+                            coh: response.data
+                            
+                          });
+                        //window.location.reload();
                     })
                     .catch(function (error) {
                         console.log(error);
