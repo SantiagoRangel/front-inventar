@@ -66,7 +66,6 @@ function valuetext(value) {
 }
 
 export default function RangeSlider() {
-    const forceUpdate = useForceUpdate();
     const classes = useStyles();
     const [value, setValue] = React.useState([1720, 1811]);
     const [state, setState] = React.useState({
@@ -149,8 +148,8 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 setLoading(true)
-                forceUpdate();
-               // setImg(['/home/estudiante/front-inventar/src/Images/ldanuevo.png','/home/estudiante/front-inventar/src/Images/wordnuevo.png'])
+              
+                setImg(['/home/estudiante/front-inventar/src/Images/ldanuevo.png','/home/estudiante/front-inventar/src/Images/wordnuevo.png'])
             })
             .catch(function (error) {
                 console.log(error);
