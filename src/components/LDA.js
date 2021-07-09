@@ -11,7 +11,7 @@ class LDA extends Component {
                 </Header>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6">
+                       
                             <h1> Modelado de Tópicos</h1>
                             <p>
                                 Para este proyecto se implementó un modelo de LDA (Latent Dirichlet Allocation) con el objetivo de hacer una caracterización de los documentos analizados del siglo XVII.
@@ -24,10 +24,7 @@ class LDA extends Component {
                             Las gráficas que se pueden ver como resultado, muestran las 10 palabras que representa los tópicos, así como la frecuencia y el peso de esta dentro de los documentos. Esto es porque a pesar de que una palabra aparezca muchas veces no necesariamente agrega más valor semántico para definir el tópico. 
                             </p>
 
-                        </div>
-                        <div className="col-6">
-                            
-                        </div>
+                        
                         <img className="lda" src={lda}></img>
                     </div>
                 </div>
