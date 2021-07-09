@@ -258,7 +258,7 @@ export default function Comparar() {
                 let data = { numtopics: state.numtopics, periodo: state.periodo2 }
                 axios.post("/LDA2", data)
                     .then((response) => {
-                        setState({ ...state, coh2: response.data })
+                        setState({ ...state, coh2: response.data.periodo })
                         setLoading(true)
                         window.location.href = '/comparar?coh1='+ periodo1+'&coh2='+response.data.periodo+'&numdocs1='+numdocs1+'&numdocs1='+response.data.numdocs;
 
