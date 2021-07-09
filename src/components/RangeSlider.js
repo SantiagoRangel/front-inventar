@@ -73,7 +73,7 @@ export default function RangeSlider() {
     const [value, setValue] = React.useState([1720, 1811]);
     const [state, setState] = React.useState({
         numtopics: 2,
-      
+        periodo: 1234,
     });
     const [img, setImg] = React.useState([ldanuevo, wordnuevo]);
     const [checked, setChecked] = React.useState(false);
