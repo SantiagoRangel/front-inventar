@@ -285,6 +285,13 @@ export default function Comparar() {
 
                 <div>
                     <div >
+                    <h1>Comparación de Periodos</h1>
+                        <p>
+                        En esta vista se pueden contrastar los resultados del modelo escogiendo dos periodos y de esta manera ver en paralelo los resultados.
+                            El funcionamiento es la misma que la anterior vista solo que acá se debe escoger el segundo rango de fechas. También se puede cambiar la visualización a un wordcloud si se desea.
+
+                        </p>
+                        
                         <div className="row">
                             <div className="col-5">
                                 <Typography id="range-slider" gutterBottom>

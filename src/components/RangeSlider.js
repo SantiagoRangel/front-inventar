@@ -83,27 +83,27 @@ export default function RangeSlider() {
 
         if (newValue[0] === 1720 && newValue[1] === 1811) {
             setState({ ...state, periodo: 1234 })
-         //   setImg([lda, wordcloud])
+            //   setImg([lda, wordcloud])
         } else if (newValue[0] === 1720 && newValue[1] === 1770) {
             setState({ ...state, periodo: 1 })
 
-         //   setImg([lda1, wordcloud1])
+            //   setImg([lda1, wordcloud1])
         } else if (newValue[0] === 1720 && newValue[1] === 1781) {
             setState({ ...state, periodo: 12 })
 
-           // setImg([lda12, wordcloud12])
+            // setImg([lda12, wordcloud12])
         } else if (newValue[0] === 1720 && newValue[1] === 1800) {
             setState({ ...state, periodo: 123 })
 
-          //  setImg([lda123, wordcloud123])
+            //  setImg([lda123, wordcloud123])
         } else if (newValue[0] === 1770 && newValue[1] === 1781) {
             setState({ periodo: 2 })
 
-          //  setImg([lda2, wordcloud2])
+            //  setImg([lda2, wordcloud2])
         } else if (newValue[0] === 1770 && newValue[1] === 1800) {
             setState({ ...state, periodo: 23 })
 
-           // setImg([lda23, wordcloud23])
+            // setImg([lda23, wordcloud23])
         } else if (newValue[0] === 1770 && newValue[1] === 1811) {
             setState({ ...state, periodo: 234 })
 
@@ -112,15 +112,15 @@ export default function RangeSlider() {
         else if (newValue[0] === 1781 && newValue[1] === 1800) {
             setState({ ...state, periodo: 3 })
 
-           // setImg([lda3, wordcloud3])
+            // setImg([lda3, wordcloud3])
         } else if (newValue[0] === 1781 && newValue[1] === 1811) {
             setState({ ...state, periodo: 34 })
 
-           // setImg([lda34, wordcloud34])
+            // setImg([lda34, wordcloud34])
         } else if (newValue[0] === 1800 && newValue[1] === 1811) {
             setState({ ...state, periodo: 4 })
 
-           // setImg([lda4, wordcloud4])
+            // setImg([lda4, wordcloud4])
         }
 
 
@@ -139,8 +139,8 @@ export default function RangeSlider() {
     const parseQuery = (queryString) => {
         var query = {};
         var pairs = (queryString[0] === "?"
-        ? queryString.substr(1)
-        : queryString
+            ? queryString.substr(1)
+            : queryString
         ).split("&");
         for (var i = 0; i < pairs.length; i++) {
             var pair = pairs[i].split("=");
@@ -148,36 +148,36 @@ export default function RangeSlider() {
         }
         return query;
     };
-    const handle = (periodo)=>{
+    const handle = (periodo) => {
         let rta;
-        if(periodo == "1"){
+        if (periodo == "1") {
             rta = "1720-1770"
         }
-        if(periodo == "2"){
+        if (periodo == "2") {
             rta = "1770-1781"
         }
-        if(periodo == "3"){
+        if (periodo == "3") {
             rta = "1781-1800"
         }
-        if(periodo == "4"){
+        if (periodo == "4") {
             rta = "1800-1811"
         }
-        if(periodo == "12"){
+        if (periodo == "12") {
             rta = "1720-1781"
         }
-        if(periodo == "123"){
+        if (periodo == "123") {
             rta = "1720-1800"
         }
-        if(periodo == "1234"){
+        if (periodo == "1234") {
             rta = "1720-1811"
         }
-        if(periodo == "23"){
+        if (periodo == "23") {
             rta = "1770-1800"
         }
-        if(periodo == "234"){
+        if (periodo == "234") {
             rta = "1770-1811"
         }
-        if(periodo == "34"){
+        if (periodo == "34") {
             rta = "1781-1800"
         }
         return rta;
@@ -185,11 +185,11 @@ export default function RangeSlider() {
     useEffect(() => {
         const paramsQuery = parseQuery(location.search);
         console.log(paramsQuery)
-        if(paramsQuery.coh){
+        if (paramsQuery.coh) {
             let pe = handle(paramsQuery.coh)
-            setState({...state, coh:pe, numdocs:paramsQuery.numdocs})
+            setState({ ...state, coh: pe, numdocs: paramsQuery.numdocs })
         }
-    }, [] );
+    }, []);
     const postLDA = () => {
         setLoading(false);
         let data = { numtopics: state.numtopics, periodo: state.periodo }
@@ -198,10 +198,10 @@ export default function RangeSlider() {
             .then((response) => {
                 console.log(response.data);
                 setLoading(true)
-                setState({...state, coh: response.data})
+                setState({ ...state, coh: response.data })
                 //history.push('/coherence?coh='+ response.data)
-                window.location.href = '/coherence?coh='+ response.data.periodo+ '&numdocs='+response.data.numdocs;
-              //  window.location.reload();
+                window.location.href = '/coherence?coh=' + response.data.periodo + '&numdocs=' + response.data.numdocs;
+                //  window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);
@@ -214,8 +214,10 @@ export default function RangeSlider() {
                     <div className="col-6">
                         <h1>Linea del tiempo</h1>
                         <p>
-                            Uno de los objetivos del proyecto constó en poder ver como cambian las temáticas presentes en los textos analizados en el tiempo. Para esto se tiene la siguiente interfaz donde se puede escoger variantes rangos de fechas para poder identificar como cambian las temáticas a través del tiempo en este conjunto de documentos. Cuando se escogen periodos más cortos el número de tópicos es menor para poder asegurar la coherencia del modelo implementado.
+                            Uno de los objetivos del proyecto constó en poder ver como cambian las temáticas presentes en los textos analizados en el tiempo. Para esto se tiene la siguiente interfaz donde se puede escoger variantes rangos de fechas para poder identificar como cambian las temáticas a través del tiempo en este conjunto de documentos.
                         </p>
+                        <p>
+                        Para poder explorar la herramienta escoja un rango de fechas e ingrese un número de tópicos (esencial escoger un número). Luego dar click en obtener resultados y esperar que la herramienta ejecute el modelo. Finalmente, si lo desea puede cambiar la visualización a un wordcloud dando click en cambiar de visualización.                        </p>
                     </div>
                     <div className="col-6">
                         <div className={classes.root}>
@@ -294,11 +296,11 @@ export default function RangeSlider() {
 
 
             </div>
-            {state.coh? <h5>Periodo: <h3>{state.coh}</h3> </h5>: "" }
-            {state.numdocs? <h5>Número de Documentos Analizados: <h3>{state.numdocs}</h3> </h5>: "" }
+            {state.coh ? <h5>Periodo: <h3>{state.coh}</h3> </h5> : ""}
+            {state.numdocs ? <h5>Número de Documentos Analizados: <h3>{state.numdocs}</h3> </h5> : ""}
             <div className="row">
-           
-            
+
+
                 <div id="rami" className="col-6">
                     {checked ? <img className="wordcloudperiodo" src={img[1]}></img> : <img className="lda" src={img[0]} />}
 
