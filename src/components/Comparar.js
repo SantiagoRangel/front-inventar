@@ -260,7 +260,7 @@ export default function Comparar() {
                     .then((response) => {
                         setState({ ...state, coh2: response.data.periodo })
                         setLoading(true)
-                        window.location.href = '/comparar?coh1='+ periodo1+'&coh2='+response.data.periodo+'&numdocs1='+numdocs1+'&numdocs1='+response.data.numdocs;
+                        window.location.href = '/comparar?coh1='+ periodo1+'&coh2='+response.data.periodo+'&numdocs1='+numdocs1+'&numdocs2='+response.data.numdocs;
 
                       /*   navigation.navigate('Coherence', {
                             coh: response.data
