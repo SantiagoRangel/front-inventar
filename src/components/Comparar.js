@@ -234,14 +234,7 @@ export default function Comparar() {
         }
         return query;
     };
-    useEffect(() => {
-        const paramsQuery = parseQuery(location.search);
-        console.log(paramsQuery)
-        if(paramsQuery.coh){
-            let pe = handle(paramsQuery.coh)
-            setState({...state, coh:pe, numdocs:paramsQuery.numdocs})
-        }
-    }, [] );
+
     useEffect(() => {
         const paramsQuery = parseQuery(location.search);
         console.log(paramsQuery)
@@ -388,7 +381,8 @@ export default function Comparar() {
                         </Button>
 
                     </div>
-                    <h5>Puntaje de Coherencia: <h3>{state.coh1}</h3> </h5>
+                    {state.coh1? <h5>Periodo: <h3>{state.coh1}</h3> </h5>: "" }
+                     {state.numdocs1? <h5>Número de Documentos Analizados: <h3>{state.numdocs1}</h3> </h5>: "" }
                     <div className="row">
                     
                         <div id="rami" className="col-6">
@@ -400,7 +394,8 @@ export default function Comparar() {
 
                         </div>
                     </div>
-                    <h5>Puntaje de Coherencia: <h3>{state.coh2}</h3> </h5>
+                    {state.coh2? <h5>Periodo: <h3>{state.coh2}</h3> </h5>: "" }
+                     {state.numdocs2? <h5>Número de Documentos Analizados: <h3>{state.numdocs2}</h3> </h5>: "" }
 
                     <div className="row">
                         <div id="rami" className="col-6">
