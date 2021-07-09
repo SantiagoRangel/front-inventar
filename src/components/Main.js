@@ -33,7 +33,7 @@ class main extends Component {
 
                             </p>
                             <p>
-                            En el proyecto "Iventar Colombia" se querían analizar 84 documentos producidos entre 1720 y 1811 en virreinato de la Nueva Granada (hoy Venezuela, Colombia, Panamá y Ecuador) de los cuales hay 56 en formato pdf o en txt y varios mapas de la época.  Con estos insumos la propuesta el proyecto constó de tres pasos principales: OCR para los documentos, implementar algoritmos de procesamientos de lenguaje natural y finalmente implementar una interfaz que permita visualizar los resultados de estos análisis.
+                            En el proyecto "Inventar Colombia" se querían analizar 84 documentos producidos entre 1720 y 1811 en virreinato de la Nueva Granada (hoy Venezuela, Colombia, Panamá y Ecuador) de los cuales hay 56 en formato pdf o en txt y varios mapas de la época.  Con estos insumos la propuesta el proyecto constó de tres pasos principales: OCR para los documentos, implementar algoritmos de procesamientos de lenguaje natural y finalmente implementar una interfaz que permita visualizar los resultados de estos análisis.
                                 El resultado obtenido fue solo una primera iteración sobre el proyecto y funciona como cimiento para posteriores adiciones a la plataforma e implementación de otras técnicas y herramientas de minería de texto que podrían ser aprovechadas e usadas dentro del marco del proyecto “Inventar Colombia”.
                             </p>
                         </div>
