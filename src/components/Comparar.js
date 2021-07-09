@@ -253,7 +253,8 @@ export default function Comparar() {
     }, [] );
     const postLDA = () => {
         setLoading(false);
-        let coherencia;
+        let periodo1;
+        let numdocs1
         let data = { numtopics: state.numtopics, periodo: state.periodo1 }
         console.log(state)
         axios.post("/LDA", data)
