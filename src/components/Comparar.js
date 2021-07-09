@@ -77,8 +77,7 @@ export default function Comparar() {
         numtopics: 2,
         periodo1: 1234,
         periodo2: 1234,
-        coh1: "",
-        coh2: ""
+
     });
     const [img, setImg] = React.useState([ldanuevo, wordnuevo]);
     const [img2, setImg2] = React.useState([lda1, wordcloud1]);
@@ -179,6 +178,40 @@ export default function Comparar() {
 
         setValue2(newValue);
     };
+    const handle = (periodo)=>{
+        let rta;
+        if(periodo == "1"){
+            rta = "1720-1770"
+        }
+        if(periodo == "2"){
+            rta = "1770-1781"
+        }
+        if(periodo == "3"){
+            rta = "1781-1800"
+        }
+        if(periodo == "4"){
+            rta = "1800-1811"
+        }
+        if(periodo == "12"){
+            rta = "1720-1781"
+        }
+        if(periodo == "123"){
+            rta = "1720-1800"
+        }
+        if(periodo == "1234"){
+            rta = "1720-1811"
+        }
+        if(periodo == "23"){
+            rta = "1770-1800"
+        }
+        if(periodo == "234"){
+            rta = "1770-1811"
+        }
+        if(periodo == "34"){
+            rta = "1781-1800"
+        }
+        return rta;
+    }
     const handleChange2 = (event) => {
         setState({
             ...state,
@@ -204,8 +237,18 @@ export default function Comparar() {
     useEffect(() => {
         const paramsQuery = parseQuery(location.search);
         console.log(paramsQuery)
+        if(paramsQuery.coh){
+            let pe = handle(paramsQuery.coh)
+            setState({...state, coh:pe, numdocs:paramsQuery.numdocs})
+        }
+    }, [] );
+    useEffect(() => {
+        const paramsQuery = parseQuery(location.search);
+        console.log(paramsQuery)
         if(paramsQuery.coh1 && paramsQuery.coh2){
-            setState({...state, coh1:paramsQuery.coh1, coh2: paramsQuery.coh2})
+            let pe1 = handle(paramsQuery.coh1)
+            let pe2 = handle(paramsQuery.coh2)
+            setState({...state, coh1:pe1, coh2: pe2, numdocs1: paramsQuery.numdocs1, numdocs2: paramsQuery.numdocs2})
         }
     }, [] );
     const postLDA = () => {
@@ -215,14 +258,15 @@ export default function Comparar() {
         console.log(state)
         axios.post("/LDA", data)
             .then((response) => {
-                coherencia = response.data;
+                periodo1 = response.data.periodo;
+                numdocs1 = response.data.numdocs;
                 setState({ ...state, coh1: response.data })
                 let data = { numtopics: state.numtopics, periodo: state.periodo2 }
                 axios.post("/LDA2", data)
                     .then((response) => {
                         setState({ ...state, coh2: response.data })
                         setLoading(true)
-                        window.location.href = '/comparar?coh1='+ coherencia+'&coh2='+response.data;
+                        window.location.href = '/comparar?coh1='+ periodo1+'&coh2='+response.data.periodo+'&numdocs1='+numdocs1+'&numdocs1='+response.data.numdocs;
 
                       /*   navigation.navigate('Coherence', {
                             coh: response.data
