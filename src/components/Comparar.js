@@ -254,7 +254,7 @@ export default function Comparar() {
             .then((response) => {
                 periodo1 = response.data.periodo;
                 numdocs1 = response.data.numdocs;
-                setState({ ...state, coh1: response.data })
+                setState({ ...state, coh1: response.data.periodo })
                 let data = { numtopics: state.numtopics, periodo: state.periodo2 }
                 axios.post("/LDA2", data)
                     .then((response) => {
