@@ -74,7 +74,7 @@ export default function Comparar() {
     const location = useLocation();
 
     const [state, setState] = React.useState({
-        numtopics: 0,
+        numtopics: 2,
         periodo1: 1234,
         periodo2: 1234,
         coh1: "",

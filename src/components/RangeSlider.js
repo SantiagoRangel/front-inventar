@@ -72,9 +72,8 @@ export default function RangeSlider() {
     const location = useLocation();
     const [value, setValue] = React.useState([1720, 1811]);
     const [state, setState] = React.useState({
-        numtopics: 0,
-        periodo: 1234,
-        coh: ""
+        numtopics: 2,
+      
     });
     const [img, setImg] = React.useState([ldanuevo, wordnuevo]);
     const [checked, setChecked] = React.useState(false);
@@ -149,11 +148,46 @@ export default function RangeSlider() {
         }
         return query;
     };
+    const handle = (periodo)=>{
+        let rta;
+        if(periodo == "1"){
+            rta = "1720-1770"
+        }
+        if(periodo == "2"){
+            rta = "1770-1781"
+        }
+        if(periodo == "3"){
+            rta = "1781-1800"
+        }
+        if(periodo == "4"){
+            rta = "1800-1811"
+        }
+        if(periodo == "12"){
+            rta = "1720-1781"
+        }
+        if(periodo == "123"){
+            rta = "1720-1800"
+        }
+        if(periodo == "1234"){
+            rta = "1720-1811"
+        }
+        if(periodo == "23"){
+            rta = "1770-1800"
+        }
+        if(periodo == "234"){
+            rta = "1770-1811"
+        }
+        if(periodo == "34"){
+            rta = "1781-1800"
+        }
+        return rta;
+    }
     useEffect(() => {
         const paramsQuery = parseQuery(location.search);
         console.log(paramsQuery)
         if(paramsQuery.coh){
-            setState({...state, coh:paramsQuery.coh})
+            let pe = handle(paramsQuery.coh)
+            setState({...state, coh:pe, numdocs:paramsQuery.numdocs})
         }
     }, [] );
     const postLDA = () => {
@@ -260,7 +294,8 @@ export default function RangeSlider() {
 
 
             </div>
-            <h5>Puntaje de Coherencia: <h3>{state.coh}</h3> </h5>
+            {state.coh? <h5>Periodo: <h3>{state.coh}</h3> </h5>: "" }
+            {state.numdocs? <h5>Número de Documentos Analizados: <h3>{state.numdocs}</h3> </h5>: "" }
             <div className="row">
            
             
