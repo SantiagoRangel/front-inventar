@@ -200,7 +200,7 @@ export default function RangeSlider() {
                 setLoading(true)
                 setState({...state, coh: response.data})
                 //history.push('/coherence?coh='+ response.data)
-                window.location.href = '/coherence?coh='+ response.data;
+                window.location.href = '/coherence?coh='+ response.data.periodo+ '&numdocs='+response.data.numdocs;
               //  window.location.reload();
             })
             .catch(function (error) {
