@@ -217,7 +217,7 @@ export default function RangeSlider() {
                             Uno de los objetivos del proyecto constó en poder ver como cambian las temáticas presentes en los textos analizados en el tiempo. Para esto se tiene la siguiente interfaz donde se puede escoger variantes rangos de fechas para poder identificar como cambian las temáticas a través del tiempo en este conjunto de documentos.
                         </p>
                         <p>
-                        Para poder explorar la herramienta escoja un rango de fechas e ingrese un número de tópicos (esencial escoger un número). Luego dar click en obtener resultados y esperar que la herramienta ejecute el modelo. Finalmente, si lo desea puede cambiar la visualización a un wordcloud dando click en cambiar de visualización.                        </p>
+                        Para poder explorar la herramienta escoja un rango de fechas e ingrese un número de tópicos (esencial escoger un número). Luego dar click en obtener resultados y esperar que la herramienta ejecute el modelo. Finalmente, si lo desea puede cambiar la visualización a un wordcloud dando click en cambiar de visualización. Los resultados pueden demorar alrededor de un minuto en ser obtenidos.                       </p>
                     </div>
                     <div className="col-6">
                         <div className={classes.root}>
