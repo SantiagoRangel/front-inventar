@@ -3,7 +3,7 @@ import Main from './components/Main.js';
 import Coherence from './components/Coherence.js';
 import Wordcloud from './components/Wordcloud.js';
 import LDA from './components/LDA.js';
-
+import NER from './components/NER';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Comparar from './components/Comparar';
@@ -21,7 +21,7 @@ function App() {
           </Route>
           <Route path='/lda' component={LDA}>
           </Route>
-          <Route path='/comparar' component={Comparar}>
+          <Route path='/comparar' component={NER}>
           </Route>
         </Switch>
 
