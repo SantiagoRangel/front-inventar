@@ -21,7 +21,7 @@ function App() {
           </Route>
           <Route path='/lda' component={LDA}>
           </Route>
-          <Route path='/comparar' component={NER}>
+          <Route path='/comparar' component={Comparar}>
           </Route>
         </Switch>
 
